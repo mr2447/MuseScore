@@ -26,4 +26,4 @@ ARTIFACTS_DIR=build.artifacts
 BUILD_DIR=build.release
 
 # Nothing is needed at the moment, artifacts appear during the build stage
-#cp -r $BUILD_DIR/public_html $ARTIFACTS_DIR/public_html
+cp -r $BUILD_DIR/public_html $ARTIFACTS_DIR/public_html
