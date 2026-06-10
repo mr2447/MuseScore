@@ -80,6 +80,11 @@ jobs:
     - name: Register gcc problem matcher
       run: echo "::add-matcher::.github/problem_matchers/gcc.json"
 
+    - name: Patch web RPC channel (compile-fix for unmaintained web audio)
+      run: |
+        cp buildscripts/wasm_patches/webrpcchannel.h  muse/framework/audio/common/rpc/platform/web/webrpcchannel.h
+        cp buildscripts/wasm_patches/webrpcchannel.cpp muse/framework/audio/common/rpc/platform/web/webrpcchannel.cpp
+
     - name: Build
       env:
         CMAKE_PREFIX_PATH: ${{env.QT_ROOT_DIR}}
